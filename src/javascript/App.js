@@ -11,8 +11,11 @@ class App extends Component {
         url: "https://api.github.com/users",
         client_id: "ae61172cc3868a1760a0",
         client_secret: "7948027c26919885cb5a916764c23ebc9dad1d7d",
-        count: [],
+        count: 5,
         sort: "created: asc",
+        headers: {
+          'User-Agent': 'request'
+        }
       },
       user: [],
       repos: [],

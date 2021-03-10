@@ -11,12 +11,18 @@ span{
 #repos-stars{
     width: 100%;
     font-size: 1rem;
+    border: none;
 }
 #main{
-    display: block;
-    background-size: 200% 200%;
-    background: linear-gradient(45deg, #f1f6f9, #9ba4b4, #f1f6f9, #9ba4b4);
+    position: relative;
+    background-size: 400% 400%;
+    background: linear-gradient(45deg, #f1f6f9, #b6bece, #f1f6f9, #b6bece);
     height: 90vh;
+    width: 100%;
+}
+#profile-background{
+    background: linear-gradient(-45deg, #f1f6f9, #b6bece, #f1f6f9, #b6bece);
+    border: none;
 }
 #img-index{
     max-width: 25%;
@@ -30,5 +36,7 @@ span{
 }
 #link-repos:hover{
     opacity: 1;
+    transition-delay: 0.1s;
+    background: rgb(236, 236, 236);
 }
 

@@ -1,32 +1,33 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 
-
 const Profile = ({ user }) => (
+  <center>
   <div>
-    <div className="row">
-      <div className="col-md-4">
-        <div className="card" style={{ width: "18rem" }}>
-          <img className="card-img-top" src={user.avatar_url} />
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              <h6>Repositórios:</h6> 
-              <span id="repos" className="badge badge-info">{user.public_repos}</span>  
-            </li>
-            <li className="list-group-item">
-              <h6>Repositórios estrelados:</h6> 
-              <span id="repos-stars" className="badge badge-warning">{user.starring}</span>
-            </li>
-          </ul>
-          <div className="card-body">
-            <a href={user.html_url} rel="noreferrer" target="_blank" className="btn btn-outline-dark btn-block">
-              Ver Perfil
+    <div className="col">
+      <div className="col">
+        <div id="profile-background" className="card" style={{ width: "18rem" }}>
+          <img className="card-img-top mb-4" src={user.avatar_url} style={{borderRadius: "50%"}}/>
+          <div className="card mb-2">
+            <a href={user.repos_url} rel="noreferrer" target="_blank" className="btn btn-primary btn-block">
+              Repos
+            </a>
+          </div>
+          <div className="card mb-2">
+            <a href={user.repos_url} rel="noreferrer" target="_blank" className="btn btn-warning btn-block">
+              Starred
+            </a>
+          </div> 
+          <div className="card mb-2">
+            <a href={user.html_url} rel="noreferrer" target="_blank" className="btn btn-dark btn-block">
+              Profile
             </a>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </center>
 );
 
 export default Profile;
