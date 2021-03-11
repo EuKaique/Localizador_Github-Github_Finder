@@ -1,17 +1,16 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# DEPENDENCIAS
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# TESTANDO
 /coverage
 
-# production
+# PRODUÇÃO
 /build
 
-# misc
+# DADOS
 .DS_Store
 .env.local
 .env.development.local

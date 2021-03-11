@@ -3,7 +3,11 @@ import Api from "../service/Api.js";
 import Profile from "../javascript/Profile.js";
 import Repos from "../javascript/Repos.js";
 
+
 class App extends Component {
+
+  /* O CONSTRUTOR ABAIXO PEGA OS DADOS DA MINHA API GITHUB QUE SERÁ USADA NA APLICAÇÃO */
+
   constructor() {
     super();
     this.state = {
@@ -11,17 +15,16 @@ class App extends Component {
         url: "https://api.github.com/users",
         client_id: "ae61172cc3868a1760a0",
         client_secret: "7948027c26919885cb5a916764c23ebc9dad1d7d",
-        count: 5,
-        sort: "created: asc",
-        headers: {
-          'User-Agent': 'request'
-        }
+        count: 4,
+        sort: "created: asc"
       },
       user: [],
-      repos: [],
-      repos_starred: [],
+      repos: []
     };
   }
+
+  /* A FUNÇÃO getUser PEGA OS PARAMÊTROS DO USUÁRIO E DO REPOSITÓRIO, QUE VEM DA API.JS */
+
   getUser = (e) => {
     const user = e.target.value;
     const { url, client_id, client_secret, count, sort } = this.state.github;
@@ -31,10 +34,10 @@ class App extends Component {
     Api.get(
       `${url}/${user}/repos?per_page=${count}&sort=${sort}&client_id=${client_id}&client_secret=${client_secret}`
     ).then(({ data }) => this.setState({ repos: data }));
-    Api.get(
-      `${url}/${user}GET/starred?per_page=${count}&sort=${sort}&client_id=${client_id}&client_secret=${client_secret}`
-    ).then(({ data }) => this.setState({ repos_starred: data }));
   };
+
+  /* A FUNÇÃO renderProfile RENDERIZA O PERFIL DE UM DETERMINADO USUÁRIO GITHUB */
+
   renderProfile = () => {
     const { user, repos } = this.state;
     return (
@@ -50,16 +53,19 @@ class App extends Component {
       </div>
     );
   };
+
+  /* A FUNÇÃO RENDER RETORNA O INDEX DA APLICAÇÃO COM TODOS OS SEUS COMPONENTES */
+
   render() {
     return (
       <div className="App">
         <nav className="navbar navbar-primary bg-dark justify-content-between">
           <a className="navbar-brand text-light" href="http://localhost:3000/">
-            Search Users Github
+            Início | Localizador Github
           </a>
           <form className="form-inline">
             <input
-              className="form-control mr-sm-2"
+              className="form-control"
               type="search"
               placeholder="Buscar Usuário"
               aria-label="Search"
@@ -68,6 +74,10 @@ class App extends Component {
             />
           </form>
         </nav>
+
+        {/* NO MAIN É FEITA UMA CONDIÇÃO, SE O USUÁRIO PESQUISADO EXISTE, A TELA MAIN DESAPARECE
+         E APARECE AS INFORMAÇÕES DO USUÁRIO */}
+
         <main id="main">
           {this.state.user.length !== 0
             ? (document.getElementById("main").hidden = true)
@@ -88,6 +98,10 @@ class App extends Component {
             </p>
           </center>
         </main>
+
+        {/* AQUI É FEITA MAIS UMA CONDIÇÃO, SE O USUÁRIO EXISTE, SEU PERFIL E RENDERIZADO, SE NÃO
+        NADA ACONTECE */}
+
         {this.state.user.length !== 0 ? this.renderProfile() : null}
       </div>
     );
