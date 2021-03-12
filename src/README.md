@@ -1,3 +1,3 @@
-### Url da aplicação rodando:
+### Visite o App:
 
-#### https://localizador-github-github-finder.vercel.app/
+#### https://localizador-github.vercel.app/
