@@ -60,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="navbar navbar-primary bg-dark justify-content-between">
-          <a className="navbar-brand text-light" href="http://localhost:3000/">
+          <a className="navbar-brand text-light" href="https://localizador-github-github-finder.vercel.app/">
             Início | Localizador Github
           </a>
           <form className="form-inline">
