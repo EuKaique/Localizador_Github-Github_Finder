@@ -5,7 +5,7 @@ import React from "react";
 
 const Profile = ({ user }) => (
   <center>
-      <main className="col">
+      <section className="col">
         <div id="profile-background" className="card" style={{ width: "16rem" }}>
           <img className="card-img-top mb-4" src={user.avatar_url} style={{borderRadius: "50%"}}/>
           <h5><i>{user.name}</i></h5>
@@ -25,7 +25,7 @@ const Profile = ({ user }) => (
             </a>
           </div>
         </div>
-      </main>
+      </section>
   </center>
 );
 

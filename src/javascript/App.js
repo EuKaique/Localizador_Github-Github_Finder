@@ -66,7 +66,7 @@ class App extends Component {
           <form className="form-inline">
             <input
               className="form-control"
-              type="search"
+              type="text"
               placeholder="Buscar Usuário"
               aria-label="Search"
               onChange={this.getUser}
