@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="navbar navbar-primary bg-dark justify-content" >
-          <a className="navbar-brand text-light" href="#">
+          <a className="navbar-brand text-light" href="/">
             Localizador Github
           </a>
           <form className="form-inline">
